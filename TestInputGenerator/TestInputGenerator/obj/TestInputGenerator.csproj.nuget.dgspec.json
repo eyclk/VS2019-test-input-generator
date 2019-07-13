@@ -1,0 +1,60 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\CASPER-PC\\source\\repos\\TestInputGenerator\\TestInputGenerator\\TestInputGenerator.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\CASPER-PC\\source\\repos\\TestInputGenerator\\TestInputGenerator\\TestInputGenerator.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\CASPER-PC\\source\\repos\\TestInputGenerator\\TestInputGenerator\\TestInputGenerator.csproj",
+        "projectName": "TestInputGenerator",
+        "projectPath": "C:\\Users\\CASPER-PC\\source\\repos\\TestInputGenerator\\TestInputGenerator\\TestInputGenerator.csproj",
+        "packagesPath": "C:\\Users\\CASPER-PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\CASPER-PC\\source\\repos\\TestInputGenerator\\TestInputGenerator\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\CASPER-PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "Microsoft.VSSDK.BuildTools": {
+              "target": "Package",
+              "version": "[16.1.3132, )"
+            },
+            "Microsoft.VisualStudio.SDK": {
+              "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[16.0.200, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

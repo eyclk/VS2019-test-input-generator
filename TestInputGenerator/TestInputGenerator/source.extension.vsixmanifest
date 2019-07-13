@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" ?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+    <Metadata>
+        <Identity Id="TestInputGenerator.5015298a-3e42-4ea3-aba0-cb681346b119" Version="0.1" Language="en-US" Publisher="Ege Yiğit Çelik" />
+        <DisplayName>Test Input Generator</DisplayName>
+        <Description xml:space="preserve">A test input generater which uses samples and bases for methods.</Description>
+        <GettingStartedGuide>Open tool window through addins top level menu.</GettingStartedGuide>
+        <ReleaseNotes>Initial test version. No error checks. Do not enter wrong inputs to the generator.</ReleaseNotes>
+        <Tags>Test Input, Test Case, Generator, Base, Sample, Input</Tags>
+    </Metadata>
+    <Installation>
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.0, 17.0)" />
+    </Installation>
+    <Dependencies>
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+    </Dependencies>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[16.0,17.0)" DisplayName="Visual Studio core editor" />
+    </Prerequisites>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    </Assets>
+</PackageManifest>
