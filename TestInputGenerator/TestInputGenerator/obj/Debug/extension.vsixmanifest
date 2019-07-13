@@ -3,6 +3,7 @@
     <Identity Id="TestInputGenerator.5015298a-3e42-4ea3-aba0-cb681346b119" Version="0.1" Language="en-US" Publisher="Ege Yiğit Çelik" />
     <DisplayName>Test Input Generator</DisplayName>
     <Description xml:space="preserve">A test input generater which uses samples and bases for methods.</Description>
+    <GettingStartedGuide>Open tool window through addins top level menu.</GettingStartedGuide>
     <ReleaseNotes>Initial test version. No error checks. Do not enter wrong inputs to the generator.</ReleaseNotes>
     <Tags>Test Input, Test Case, Generator, Base, Sample, Input</Tags>
   </Metadata>

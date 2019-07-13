@@ -25,3 +25,30 @@ C:\Users\CASPER-PC\source\repos\TestInputGenerator\TestInputGenerator\obj\Debug\
 C:\Users\CASPER-PC\source\repos\TestInputGenerator\TestInputGenerator\obj\Debug\extension.vsixmanifest
 C:\Users\CASPER-PC\source\repos\TestInputGenerator\TestInputGenerator\obj\Debug\files.json
 C:\Users\CASPER-PC\source\repos\TestInputGenerator\TestInputGenerator\obj\Debug\createTemplateManifests.cache
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\bin\Debug\TestInputGenerator.dll
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\bin\Debug\TestInputGenerator.pdb
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\bin\Debug\TestInputGenerator.pkgdef
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\bin\Debug\TestInputGenerator.vsix
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\bin\Debug\extension.vsixmanifest
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Debug\TestInputGenerator.csprojAssemblyReference.cache
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Debug\GeneratorToolWindowControl.baml
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Debug\GeneratorToolWindowControl.g.cs
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Debug\TestInputGenerator_MarkupCompile.cache
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Debug\TestInputGenerator.g.resources
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Debug\_EmptyResource.resources
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Debug\TestInputGenerator.csproj.GenerateResource.cache
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Debug\TestInputGeneratorPackage.cto
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Debug\VSCT.read.1.tlog
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Debug\VSCT.write.1.tlog
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Debug\resources.json
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Debug\ctoFiles.json
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Debug\_EmptyResource.resources.original
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Debug\mergeCto.cache
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Debug\TestInputGenerator.csproj.CoreCompileInputs.cache
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Debug\TestInputGenerator.dll
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Debug\TestInputGenerator.pdb
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Debug\TestInputGenerator.pkgdef
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Debug\TestInputGenerator.latest.pkgdef
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Debug\extension.vsixmanifest
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Debug\files.json
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Debug\createTemplateManifests.cache

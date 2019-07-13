@@ -4,11 +4,11 @@
 library
 C#
 .cs
-C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Debug\
+C:\Users\CASPER-PC\source\repos\TestInputGenerator Alternative Input System\TestInputGenerator\TestInputGenerator\obj\Release\
 TestInputGenerator
 none
 false
-DEBUG;TRACE
+TRACE
 
 1-2146326435
 11928252445

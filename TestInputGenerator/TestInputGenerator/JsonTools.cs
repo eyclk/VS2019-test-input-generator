@@ -11,8 +11,7 @@ namespace TestInputGenerator
 {
     class JsonTools
     {
-        //CASPER-PC yerine başka, kişiye uygun bir location bul json dosyaları için.
-        private static string currentDirectory = "C:\\Users\\CASPER-PC\\Desktop\\Visual Studio Projects\\Early Projects";
+        private static string currentDirectory = "";
 
         public static void createJson(string className, string methodName)
         {
@@ -39,7 +38,29 @@ namespace TestInputGenerator
             File.WriteAllText(@projectPath, rss.ToString());
         }
 
-        public static void addInputSampleToJson(string className, string methodName, string sample, int sampleId)
+        public static void addInputSamplesToJson(string className, string methodName, string insideInputsBox)
+        {
+            string[] inputSamples = insideInputsBox.Split('\n', '\r').Where(x => !string.IsNullOrEmpty(x)).ToArray();
+            string projectPath = currentDirectory + "\\" + className + "." + methodName + ".json";
+            JObject rss = JObject.Parse(File.ReadAllText(@projectPath));
+            JObject o1 = (JObject)rss["Test Input Generator"];
+
+            if (o1["Input Samples"] != null)
+            {
+                o1.Property("Input Samples").Remove();
+                File.WriteAllText(@projectPath, rss.ToString());
+            }
+
+            JArray inputsJArray = new JArray();
+            foreach (string s in inputSamples)
+            {
+                inputsJArray.Add(s);
+            }
+            o1.Add(new JProperty("Input Samples", inputsJArray));
+            File.WriteAllText(@projectPath, rss.ToString());
+        }
+
+        /*public static void addInputSampleToJson(string className, string methodName, string sample, int sampleId)
         {
             string projectPath = currentDirectory + "\\" + className + "." + methodName + ".json";
             JObject rss = JObject.Parse(File.ReadAllText(@projectPath));
@@ -63,7 +84,7 @@ namespace TestInputGenerator
             JObject o1 = (JObject)rss["Test Input Generator"];
             o1["Input Sample " + sampleId] += "," + newSample;
             File.WriteAllText(@projectPath, rss.ToString());
-        }
+        }*/
 
         public static void addBaseToJson(string className, string methodName, string aBase, int baseId)
         {
@@ -79,8 +100,6 @@ namespace TestInputGenerator
                 o1.Property("Base " + (baseId - 1)).AddAfterSelf(new JProperty("Base " + baseId, aBase));
             }
             File.WriteAllText(@projectPath, rss.ToString());
-
-            //o1.Property("Base " + (baseId - 1)).AddAfterSelf(new JProperty("Base " + baseId, aBase));
         }
 
         public static void addGeneratedTestInputsToJson(string className, string methodName, List<String[]> testInputs)
@@ -110,26 +129,6 @@ namespace TestInputGenerator
             o1.Add(new JProperty("Test Inputs", testInputsJArray));
 
             File.WriteAllText(@projectPath, rss.ToString());
-            /*o1.Add(new JArray("Test Inputs"));
-            //JArray testInputs = (JArray)o1["Test Inputs"];
-
-            string stringToAdd = "";
-            for (int i = 0; i < aTestInput.Length; i++)
-            {
-                if (i + 1 == aTestInput.Length)
-                {
-                    stringToAdd += aTestInput[i];
-                }
-                else
-                {
-                    stringToAdd += aTestInput[i] + ",";
-                }
-            }
-            //JArray testInputs = new JArray();
-
-            testInputs.Add(stringToAdd);
-
-            File.WriteAllText(@projectPath, rss.ToString());*/
         }
 
         private static void emptyGeneratedInputsArrayInJson(string className, string methodName)
@@ -154,7 +153,11 @@ namespace TestInputGenerator
             if (choofdlog.ShowDialog() == DialogResult.OK)
             {
                 string sFileName = choofdlog.FileName;
-                //string projectPath = currentDirectory + "\\" + sFileName + ".json";
+
+                string[] tempDirectory = sFileName.Split('\\');
+                tempDirectory[tempDirectory.Length - 1] = null;
+                currentDirectory = string.Join("\\", tempDirectory);
+
                 JObject rss = JObject.Parse(File.ReadAllText(sFileName));
                 return (JObject)rss["Test Input Generator"];
             }
@@ -163,6 +166,5 @@ namespace TestInputGenerator
                 return null;
             }            
         }
-
     }
 }

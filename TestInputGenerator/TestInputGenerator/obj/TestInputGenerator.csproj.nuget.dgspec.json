@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CASPER-PC\\source\\repos\\TestInputGenerator\\TestInputGenerator\\TestInputGenerator.csproj": {}
+    "C:\\Users\\CASPER-PC\\source\\repos\\TestInputGenerator Alternative Input System\\TestInputGenerator\\TestInputGenerator\\TestInputGenerator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CASPER-PC\\source\\repos\\TestInputGenerator\\TestInputGenerator\\TestInputGenerator.csproj": {
+    "C:\\Users\\CASPER-PC\\source\\repos\\TestInputGenerator Alternative Input System\\TestInputGenerator\\TestInputGenerator\\TestInputGenerator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CASPER-PC\\source\\repos\\TestInputGenerator\\TestInputGenerator\\TestInputGenerator.csproj",
+        "projectUniqueName": "C:\\Users\\CASPER-PC\\source\\repos\\TestInputGenerator Alternative Input System\\TestInputGenerator\\TestInputGenerator\\TestInputGenerator.csproj",
         "projectName": "TestInputGenerator",
-        "projectPath": "C:\\Users\\CASPER-PC\\source\\repos\\TestInputGenerator\\TestInputGenerator\\TestInputGenerator.csproj",
+        "projectPath": "C:\\Users\\CASPER-PC\\source\\repos\\TestInputGenerator Alternative Input System\\TestInputGenerator\\TestInputGenerator\\TestInputGenerator.csproj",
         "packagesPath": "C:\\Users\\CASPER-PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CASPER-PC\\source\\repos\\TestInputGenerator\\TestInputGenerator\\obj\\",
+        "outputPath": "C:\\Users\\CASPER-PC\\source\\repos\\TestInputGenerator Alternative Input System\\TestInputGenerator\\TestInputGenerator\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [

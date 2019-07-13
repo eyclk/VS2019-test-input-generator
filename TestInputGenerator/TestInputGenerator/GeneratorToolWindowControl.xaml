@@ -7,30 +7,27 @@
              Background="{DynamicResource {x:Static vsshell:VsBrushes.WindowKey}}"
              Foreground="{DynamicResource {x:Static vsshell:VsBrushes.WindowTextKey}}"
              mc:Ignorable="d"
-             d:DesignHeight="600" d:DesignWidth="300"
+             d:DesignHeight="1200" d:DesignWidth="300"
              Name="MyToolWindow">
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel Orientation="Vertical" CanVerticallyScroll="True">
-            <TextBlock Margin="8" HorizontalAlignment="Center">Generator Tool Window</TextBlock>
-            <Button Content="Reset the generator" Click="button5_Click" IsEnabled="False" Height="24" x:Name="button5" RenderTransformOrigin="0.492,0.525" Margin="43,0,42,0"/>
-            <Button Content="Get info back from json file" Click="button8_Click" IsEnabled="True" Height="24" x:Name="button8" RenderTransformOrigin="0.492,0.525" Margin="43,0,42,0"/>
-            <Button Content="Enter class and method names" Click="button1_Click" Height="24" x:Name="button1" RenderTransformOrigin="0.492,0.525" Margin="43,0,42,0"/>
+                <TextBlock Margin="2" HorizontalAlignment="Center"></TextBlock>
+            <Button Content="Reset the Generator" Click="button5_Click" IsEnabled="False" Height="24" x:Name="button5" RenderTransformOrigin="0.492,0.525" Margin="43,0,42,0"/>
+            <Button Content="Get Info Back From Json File" Click="button8_Click" IsEnabled="True" Height="24" x:Name="button8" RenderTransformOrigin="0.492,0.525" Margin="43,0,42,0"/>
+            <Button Content="Enter Class and Method Names" Click="button1_Click" Height="24" x:Name="button1" RenderTransformOrigin="0.492,0.525" Margin="43,0,42,0"/>
             <TextBox Name="classMethodNamesTextBox" 
                 Text="Class Name/Method Name: "
                 Height="40"
                 IsReadOnly="True" Margin="43,0,42,0"/>
-            <Button Content="Enter the number of inputs" IsEnabled="False" Click="button2_Click" Height="24" x:Name="button2" RenderTransformOrigin="0.492,0.525" Margin="43,0,42,0"/>
-            <TextBox Name="numOfInputTextBox" 
-                Text="Number of inputs: "
-                Height="19"
-                IsReadOnly="True" Margin="43,0,42,0"/>
-            <Button Content="Add inputs" Click="button3_Click" IsEnabled="False" Height="24" x:Name="button3" RenderTransformOrigin="0.492,0.525" Margin="43,0,42,0"/>
-            <TextBox IsReadOnly="True" x:Name="inputsBox" Text="" Height="auto" Margin="43,0,42,0" />
-            <Button Content="Add a sample to an input" Click="button4_Click" IsEnabled="False" Height="24" x:Name="button4" RenderTransformOrigin="0.492,0.525" Margin="43,0,42,0"/>
-            <Button Content="Add a base" Click="button6_Click" IsEnabled="False" Height="24" x:Name="button6" RenderTransformOrigin="0.492,0.525" Margin="43,0,42,0"/>
+            <Button Content="Add and Edit Input Samples" IsEnabled="False" Click="button2_Click" Height="24" x:Name="button2" RenderTransformOrigin="0.492,0.525" Margin="43,0,42,0"/>
+            <TextBlock Margin="2" HorizontalAlignment="Center">Input Samples to the Below Box</TextBlock>
+            <TextBox IsReadOnly="True" AcceptsReturn="True" x:Name="inputsBox" Text="" Height="auto" Margin="43,0,42,0" />
+            <Button Content="Validate and Lock Input Samples" Click="button3_Click" IsEnabled="False" Height="24" x:Name="button3" RenderTransformOrigin="0.492,0.525" Margin="43,0,42,0"/>
+
+            <Button Content="Add a Base" Click="button6_Click" IsEnabled="False" Height="24" x:Name="button6" RenderTransformOrigin="0.492,0.525" Margin="43,0,42,0"/>
             <TextBox IsReadOnly="True" x:Name="basesBox" Text="" Height="auto" Margin="43,0,42,0" />
-            <Button Content="Generate test inputs" Click="button7_Click" IsEnabled="False" Height="24" x:Name="button7" RenderTransformOrigin="0.492,0.525" Margin="43,0,42,0"/>
+            <Button Content="Generate Test Inputs" Click="button7_Click" IsEnabled="False" Height="24" x:Name="button7" RenderTransformOrigin="0.492,0.525" Margin="43,0,42,0"/>
             <TextBox IsReadOnly="True" x:Name="generatedInputsBox" Text="" Height="auto" Margin="43,0,42,0"/>
              
         </StackPanel>

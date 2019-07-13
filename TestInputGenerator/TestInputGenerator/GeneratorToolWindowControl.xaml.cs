@@ -36,8 +36,8 @@
         private string methodName;
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            className = Interaction.InputBox("Please enter a class name without \".cs\":", "Class name input", "");
-            methodName = Interaction.InputBox("Please enter a method name:", "Method name input", "");
+            className = Interaction.InputBox("Please enter a class name without \".cs\"", "Class name input", "");
+            methodName = Interaction.InputBox("Please enter a method name", "Method name input", "");
 
             classMethodNamesTextBox.Text += "\n"+className+"/"+methodName;
 
@@ -49,45 +49,74 @@
             button8.IsEnabled = false;
         }
 
-        private string numOfInputs;
+        //private string numOfInputs;
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            numOfInputs = Interaction.InputBox("Please enter the number of inputs:", "Number of inputs", "Any integer greater than 0");
-            numOfInputTextBox.Text += numOfInputs;
-            
+            //numOfInputs = Interaction.InputBox("Please enter the number of input samples", "Number of input samples", "Any integer greater than 0");
+            //numOfInputTextBox.Text += numOfInputs;
+
+            inputsBox.IsReadOnly = false;
+
+            System.Windows.MessageBox.Show("Please enter the input samples with commas to the below box like this:\n" +
+                "1,2,3\n\"a\",\"b\",\"c\"\ntrue,false");
             button2.IsEnabled = false;
             button3.IsEnabled = true;
+            button6.IsEnabled = false;
+            button7.IsEnabled = false;
         }
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
+            if (inputsBox.Text.Equals(""))
+            {
+                System.Windows.MessageBox.Show("Input samples box cannot be empty");
+            }
+            else if (inputsBox.Text.Split('\n').Length < 2)
+            {
+                System.Windows.MessageBox.Show("There must be at least 2 lines of input samples");
+            }
+            else
+            {
+                button2.IsEnabled = true;
+                button3.IsEnabled = false;
+                inputsBox.IsReadOnly = true;
+                button6.IsEnabled = true;
+                if (!basesBox.Text.Equals(""))
+                {
+                    button7.IsEnabled = true;
+                }
+                JsonTools.addInputSamplesToJson(className, methodName, inputsBox.Text);
+            }
+            
+            /*
             for (int i=1; i<=Int32.Parse(numOfInputs); i++)
             {
-                string tempInput = Interaction.InputBox("Please enter input " + i + " with commas between samples.", "Input " + i);
+                string tempInput = Interaction.InputBox("Please enter input sample " + i + " with commas between samples", "Input sample " + i);
                 inputsBox.Text += "Input "+i+":"+tempInput+"\n";
                 JsonTools.addInputSampleToJson(className, methodName, tempInput, i);
             }
 
             button3.IsEnabled = false;
-            button4.IsEnabled = true;
-            button6.IsEnabled = true;
+            //button4.IsEnabled = true;
+            button6.IsEnabled = true;*/
         }
 
+        /*
         private void button4_Click(object sender, RoutedEventArgs e)
         {
-            string inputToEdit = Interaction.InputBox("Please enter the number of the input you would like to change:", "Input number");
+            string inputToEdit = Interaction.InputBox("Please enter the id of the input sample you would like to change", "Input id");
             string[] inputsText = inputsBox.Text.Split('\n');
-            string sampleToAdd = Interaction.InputBox("Please enter the input sample you would like to add to input " + inputToEdit + ":", "Additional input");
+            string sampleToAdd = Interaction.InputBox("Please enter the input you would like to add to an input sample " + inputToEdit, "Additional input");
             inputsText[Int32.Parse(inputToEdit)-1] += ","+sampleToAdd;
             inputsBox.Text = string.Join("\n", inputsText);
 
             JsonTools.addToExistingInputSampleInJson(className, methodName, sampleToAdd, Int32.Parse(inputToEdit));
-        }
+        }*/
 
         private void button5_Click(object sender, RoutedEventArgs e)
         {
             classMethodNamesTextBox.Text = "Class Name/Method Name: ";
-            numOfInputTextBox.Text = "Number of inputs: ";
+            //numOfInputTextBox.Text = "Number of Input Samples: ";
             inputsBox.Text = "";
             basesBox.Text = "";
             generatedInputsBox.Text = "";
@@ -95,7 +124,7 @@
             button1.IsEnabled = true;
             button2.IsEnabled = false;
             button3.IsEnabled = false;
-            button4.IsEnabled = false;
+            //button4.IsEnabled = false;
             button5.IsEnabled = false;
             button6.IsEnabled = false;
             button7.IsEnabled = false;
@@ -105,7 +134,7 @@
         private int baseNum = 1;
         private void button6_Click(object sender, RoutedEventArgs e)
         {
-            string aBase = Interaction.InputBox("Please enter a base with commas between samples: ", "Base " + baseNum + " entry");
+            string aBase = Interaction.InputBox("Please enter a base with commas between inputs", "Base " + baseNum + " entry");
             basesBox.Text += "Base " + baseNum + ":" + aBase+"\n";
             JsonTools.addBaseToJson(className, methodName, aBase, baseNum);
             baseNum++;
@@ -116,10 +145,10 @@
         private void button7_Click(object sender, RoutedEventArgs e)
         {
             List<String[]> generatedInputs = new List<String[]>();
-            string[] tempInputSamples = inputsBox.Text.Split(':', '\n');
+            string[] tempInputSamples = inputsBox.Text.Split('\n', '\r').Where(x => !string.IsNullOrEmpty(x)).ToArray();
             string[] tempBases = basesBox.Text.Split(':', '\n');
-            List<String> inputSamples = createSamplesOrBasesList(tempInputSamples);
-            List<String> bases = createSamplesOrBasesList(tempBases);
+            List<String> inputSamples = createSamplesList(tempInputSamples);
+            List<String> bases = createBasesList(tempBases);
             List<String[]> splittedSamples = splitElementsWithCommasInsideList(inputSamples);
             List<String[]> splittedBases = splitElementsWithCommasInsideList(bases);
             foreach (String[] sBase in splittedBases)
@@ -148,27 +177,32 @@
                 generatedInputsBox.Text += "]\n";
             }
             JsonTools.addGeneratedTestInputsToJson(className, methodName, uniqueGeneratedInputs);
+
         }
 
         private void button8_Click(object sender, RoutedEventArgs e)
         {
             JObject o1 = JsonTools.readFromJson();
             classMethodNamesTextBox.Text += "\n" + o1["Class"] + "/" + o1["Method"];
-            if (o1["Input Sample 1"] != null)
+            if (o1["Input Samples"] != null)
             {
-                int i = 1;
-                while (o1["Input Sample " + i] != null)
+                string[] samplesArray = ((JArray)o1["Input Samples"]).ToObject<string[]>();
+                foreach (String i in samplesArray)
                 {
-                    inputsBox.Text += "Input " + i + ":" + o1["Input Sample " + i] + "\n";
-                    i++;
+                    inputsBox.Text += i + "\n";
                 }
-                numOfInputTextBox.Text += (i - 1);
-                numOfInputs = (i - 1).ToString();
-                button4.IsEnabled = true;
+
+
+                /*int i = 1;
+                while (o1["Input Samples"] != null)
+                {
+                    inputsBox.Text += o1["Input Samples"] + "\n";
+                    i++;
+                }*/
+                //numOfInputTextBox.Text += (i - 1);
+                //numOfInputs = (i - 1).ToString();
+                //button4.IsEnabled = true;
                 button6.IsEnabled = true;
-            }
-            else
-            {
                 button2.IsEnabled = true;
             }
             if (o1["Base 1"] != null)
@@ -186,7 +220,6 @@
             className = o1["Class"].ToString();
             methodName = o1["Method"].ToString();
 
-            //Buraya generated input boxı da dolduracak bir kod yaz.
             if (o1["Test Inputs"] != null)
             {
                 JArray tempJArray = (JArray)o1["Test Inputs"];
@@ -202,10 +235,19 @@
             button8.IsEnabled = false;
         }
 
-        private List<String> createSamplesOrBasesList(string[] anArray)
+        private List<String> createBasesList(string[] anArray)
         {
             List<String> desiredList = new List<String>();
             for (int i=1; i<anArray.Length; i+=2)
+            {
+                desiredList.Add(anArray[i]);
+            }
+            return desiredList;
+        }
+        private List<String> createSamplesList(string[] anArray)
+        {
+            List<String> desiredList = new List<String>();
+            for (int i = 0; i < anArray.Length; i++)
             {
                 desiredList.Add(anArray[i]);
             }
@@ -289,5 +331,6 @@
             }
             return flag;
         }
+
     }
 }
